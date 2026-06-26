@@ -1,22 +1,6 @@
 import ipaddress
-import os
 import subprocess
-import sys
 from typing import Optional
-
-
-def _import_nmap():
-    this_dir = os.path.abspath(os.path.dirname(__file__))
-    saved = sys.path[:]
-    sys.path = [p for p in sys.path if os.path.abspath(p) != this_dir]
-    if "nmap" in sys.modules:
-        del sys.modules["nmap"]
-    try:
-        import my_nmap as _nmap
-
-        return _nmap
-    finally:
-        sys.path[:] = saved
 
 
 def scan_network(
@@ -27,7 +11,8 @@ def scan_network(
     arguments: str = "-sn",
 ) -> list[str]:
     try:
-        nmap = _import_nmap()
+        import nmap
+
         nm = nmap.PortScanner()
         args = arguments
         if ports:

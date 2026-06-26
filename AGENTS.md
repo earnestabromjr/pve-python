@@ -2,7 +2,7 @@
 
 ## Project
 
-Early-stage Python project. Boilerplate PyCharm `main.py`, one placeholder stub (`proxmox.py`), one working module (`nmap.py`). Intended purpose likely Proxmox + Nmap automation or integration.
+Early-stage Python project. Boilerplate PyCharm `main.py`, one placeholder stub (`proxmox.py`), one working module (`my_nmap.py`). Intended purpose likely Proxmox + Nmap automation or integration.
 
 ## Toolchain
 
@@ -24,5 +24,5 @@ uv run python main.py  # run a script with venv active
 
 - No tests, no CI, no linter/formatter/typechecker configured.
 - Not a git repository.
-- `nmap.py` provides `scan_network(network, timeout, ports, arguments)` — uses `python-nmap` with a `ping` fallback.
+- `my_nmap.py` provides `scan_network(network, timeout, ports, arguments)` — uses `python-nmap` with a `ping` fallback.
 - If you add real code in `proxmox.py`, consider configuring pytest, ruff, and mypy.
