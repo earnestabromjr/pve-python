@@ -12,7 +12,7 @@ def _import_nmap():
     if "nmap" in sys.modules:
         del sys.modules["nmap"]
     try:
-        import nmap as _nmap
+        import my_nmap as _nmap
 
         return _nmap
     finally:
